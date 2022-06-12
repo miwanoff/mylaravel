@@ -1,5 +1,9 @@
 @extends('layout')
 
+@section('title')
+About us
+@endsection
+
 @section('main_content')
 <div class="jumbotron bg-warning">
     <div class="container">
