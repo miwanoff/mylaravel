@@ -26,5 +26,13 @@ Reviews
     <button type="submit" class="btn btn-success">Send</button>
 </form>
 <br>
+<h1>Reiewsv</h1>
+@foreach($reviews as $el)
+<div class="alert alert-warning">
+    <h3>{{ $el->subject }}</h3>
+    <b>{{ $el->email }}</b>
+    <p>{{ $el->message }}</p>
+</div>
+@endforeach
 
 @endsection
