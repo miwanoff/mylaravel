@@ -32,6 +32,7 @@ Reviews
     <h3>{{ $el->subject }}</h3>
     <b>{{ $el->email }}</b>
     <p>{{ $el->message }}</p>
+    <p>{{ date('d.m.Y H:i', strtotime($el->created_at)) }}</p>
 </div>
 @endforeach
 

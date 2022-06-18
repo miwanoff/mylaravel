@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MainController extends Controller
 {
@@ -22,6 +23,7 @@ class MainController extends Controller
         // return view('review');
         $reviews = new Contact();
         // dd($reviews->all());
+        $reviews = DB::table('contacts')->orderBy('created_at', 'desc')->get();
         return view('review', ['reviews' => $reviews->all()]);
     }
 
