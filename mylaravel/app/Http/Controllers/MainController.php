@@ -46,4 +46,27 @@ class MainController extends Controller
 
     }
 
+    public function portfolio()
+    {
+        return view('portfolio');
+    }
+
+    public function portfolio_check(Request $request)
+    {
+        $valid = $request->validate([
+            'cover_item' => 'required|min:4|max:255',
+            'link_item' => 'required|min:4|max:255',
+            'description_item' => 'required|min:15|max:500',
+        ]);
+        $portfolio = new Portfolio();
+
+        $portfolio->cover_item = $request->input('cover_item');
+        $portfolio->link_item = $request->input('link_item');
+        $portfolio->description_item = $request->input('description_item');
+
+        $portfolio->save();
+
+        return redirect()->route('portfolio');
+    }
+
 }
