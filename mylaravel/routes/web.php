@@ -29,8 +29,8 @@ Route::get('/review', 'App\Http\Controllers\MainController@review')->name('revie
 
 Route::post('/review/check', 'App\Http\Controllers\MainController@review_check');
 
-Route::get('/admin_dashboard', 'App\Http\Controllers\Admin\DashboardController@index');
-Route::get('/subscriber_dashboard', 'App\Http\Controllers\Subscriber\DashboardController@index');
+Route::get('/admin_dashboard', 'App\Http\Controllers\Admin\DashboardController@index')->middleware('role:admin');
+Route::get('/subscriber_dashboard', 'App\Http\Controllers\Subscriber\DashboardController@index')->middleware('role:subscriber');
 
 // Route::get('/user/{id}/{name}', function ($id, $name) {
 //     return 'id:' . $id . ' name:' . $name;
