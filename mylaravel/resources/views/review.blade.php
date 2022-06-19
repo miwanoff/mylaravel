@@ -5,7 +5,9 @@ Reviews
 @endsection
 
 @section('main_content')
+@auth
 <h1>Form for reviews</h1>
+@endauth
 
 @if($errors->any())
 <div class="alert alert-danger">
@@ -26,7 +28,7 @@ Reviews
 </form>
 @endauth
 <br>
-<h1>Reiewsv</h1>
+<h1>Reviews</h1>
 @foreach($reviews as $el)
 <div class="alert alert-warning">
     <h3>{{ $el->subject }}</h3>
