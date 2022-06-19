@@ -4,7 +4,7 @@
     <nav class="my-2 my-md-0 mr-md-3">
         <a class="p-2 text-white" href="/">Home</a>
         <a class="p-2 text-white" href="/about">About</a>
-
+        <a class="p-2 text-white" href="/portfolio">Portfolio</a>
     </nav>
     <a class="btn btn-warning" href="/review">Reviews</a>
 </div>

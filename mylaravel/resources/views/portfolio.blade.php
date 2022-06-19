@@ -14,7 +14,8 @@ Portfolio
         <p><a class="btn btn-danger btn-lg" href="#" role="button">Learn more »</a></p>
     </div>
 </div>
-
+@auth
+@if (Auth::user()->role == 'admin')
 <h1>Load Portfolio Item</h1>
 @if($errors->any())
 <div class="alert alert-danger">
@@ -35,7 +36,8 @@ Portfolio
     <button type="submit" class="btn btn-danger">Load</button>
 </form>
 <br>
-
+@endif
+@endauth
 <div class="album py-5 bg-dark">
     <div class="container">
 
