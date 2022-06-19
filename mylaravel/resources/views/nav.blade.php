@@ -5,6 +5,11 @@
         <a class="p-2 text-white" href="/">Home</a>
         <a class="p-2 text-white" href="/about">About</a>
         <a class="p-2 text-white" href="/portfolio">Portfolio</a>
+        @auth
+        @includeWhen(Auth::user()->role == 'admin', 'partials.nav_admin')
+        @includeWhen(Auth::user()->role == 'subscriber', 'partials.nav_subscriber')
+        @endauth
+
     </nav>
     <a class="btn btn-warning" href="/review">Reviews</a>
 </div>
