@@ -16,6 +16,10 @@ return new class extends Migration
         Schema::create('portfolios', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('cover_item');
+            $table->string('link_item');
+            $table->text('description_item');
+
         });
     }
 

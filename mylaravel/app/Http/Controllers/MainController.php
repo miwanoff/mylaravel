@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\Portfolio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -48,7 +49,10 @@ class MainController extends Controller
 
     public function portfolio()
     {
-        return view('portfolio');
+        $portfolio = new Portfolio();
+        $reviews = DB::table('portfolios')->orderBy('created_at', 'desc')->get();
+        return view('portfolio', ['portfolio' => $portfolio->all()]);
+
     }
 
     public function portfolio_check(Request $request)

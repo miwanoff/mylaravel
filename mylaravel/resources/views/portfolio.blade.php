@@ -36,5 +36,13 @@ Portfolio
 </form>
 <br>
 
+@foreach($portfolio as $el)
+<div class="alert alert-warning">
+    <h3>{{ $el->cover_item }}</h3>
+    <b>{{ $el->link_item }}</b>
+    <p>{{ $el->description_item }}</p>
+</div>
+@endforeach
+
 
 @endsection
